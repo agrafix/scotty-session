@@ -106,8 +106,8 @@ maintainSessions sessions =
 
 setCookie :: (Monad m, ScottyError e) => Session a -> ActionT e m ()
 setCookie sess =
-    do let formattedExp = TL.pack $ formatTime defaultTimeLocale "%a, %d-%b-%Y %X %Z" (sess_validUntil sess)
-       setHeader "Set-Cookie" $ "sid=" <> TL.fromStrict (sess_id sess) <> "; " <> formattedExp
+    do let formattedExp = TL.pack $ formatTime defaultTimeLocale "%a, %d %b %Y %X %Z" (sess_validUntil sess)
+       setHeader "Set-Cookie" $ "sid=" <> TL.fromStrict (sess_id sess) <> "; Path=/; Expires=" <> formattedExp
 
 loadSession :: (MonadIO m, ScottyError e) => SessionJar a -> ActionT e m (Maybe (Session a))
 loadSession sessions =
