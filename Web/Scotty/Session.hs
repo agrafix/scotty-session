@@ -27,7 +27,6 @@ import Network.Wai
 
 import Data.Time.Clock
 import Data.Time.Format
-import System.Locale (defaultTimeLocale)
 
 import Web.Scotty.Trans
 
