@@ -3,4 +3,4 @@ scotty-session
 
 Adding session functionality to scotty
 
-Hackage: http://hackage.haskell.org/package/scotty-session-0.0.4
+Hackage: http://hackage.haskell.org/package/scotty-session
